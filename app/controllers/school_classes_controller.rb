@@ -9,6 +9,7 @@ class SchoolClassesController < ActionController::Base
   end
 
   def new
+    params.inspect
     @school_class = SchoolClass.new
   end
 
