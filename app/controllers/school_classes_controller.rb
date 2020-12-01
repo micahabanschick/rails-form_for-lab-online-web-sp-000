@@ -33,8 +33,8 @@ class SchoolClassesController < ActionController::Base
 
   private
 
-  def student_params(*args)
-    params.require(:student).permit(*args)
+  def school_class_params(*args)
+    params.require(:school_class).permit(*args)
   end
 
 end
