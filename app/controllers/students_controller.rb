@@ -1,19 +1,19 @@
 class StudentsController < ActionController::Base
 
   def index
-    @students = student.all
+    @students = Student.all
   end
 
   def show
-    @student = student.find(params[:id])
+    @student = Student.find(params[:id])
   end
 
   def new
-    @student = student.new
+    @student = Student.new
   end
 
   def create
-    @student = student.new
+    @student = Student.new
     @student.title = params[:title]
     @student.description = params[:description]
     @student.save
@@ -22,11 +22,11 @@ class StudentsController < ActionController::Base
 
   # add edit and update methods here
   def edit
-    @student = student.find(params[:id])
+    @student = Student.find(params[:id])
   end
 
   def update
-    @student = student.find(params[:id])
+    @student = Student.find(params[:id])
     @student.update(title: params[:student][:title], description: params[:student][:description])
     redirect_to student_path(@student)
   end
