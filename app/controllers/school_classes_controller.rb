@@ -31,4 +31,10 @@ class SchoolClassesController < ActionController::Base
     redirect_to school_class_path(@school_class)
   end
 
+  private
+
+  def student_params(*args)
+    params.require(:student).permit(*args)
+  end
+
 end
