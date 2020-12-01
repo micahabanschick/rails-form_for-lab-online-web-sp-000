@@ -1,34 +1,34 @@
 class StudentsController < ActionController::Base
 
   def index
-    @articles = Article.all
+    @students = student.all
   end
 
   def show
-    @article = Article.find(params[:id])
+    @student = student.find(params[:id])
   end
 
   def new
-    @article = Article.new
+    @student = student.new
   end
 
   def create
-    @article = Article.new
-    @article.title = params[:title]
-    @article.description = params[:description]
-    @article.save
-    redirect_to article_path(@article)
+    @student = student.new
+    @student.title = params[:title]
+    @student.description = params[:description]
+    @student.save
+    redirect_to student_path(@student)
   end
 
   # add edit and update methods here
   def edit
-    @article = Article.find(params[:id])
+    @student = student.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
-    @article.update(title: params[:article][:title], description: params[:article][:description])
-    redirect_to article_path(@article)
+    @student = student.find(params[:id])
+    @student.update(title: params[:student][:title], description: params[:student][:description])
+    redirect_to student_path(@student)
   end
 
 end
