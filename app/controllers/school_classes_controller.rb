@@ -1,34 +1,34 @@
 class SchoolClassesController < ActionController::Base
 
   def index
-    @articles = Article.all
+    @school_classes = SchoolClass.all
   end
 
   def show
-    @article = Article.find(params[:id])
+    @school_class = school_class.find(params[:id])
   end
 
   def new
-    @article = Article.new
+    @school_class = school_class.new
   end
 
   def create
-    @article = Article.new
-    @article.title = params[:title]
-    @article.description = params[:description]
-    @article.save
-    redirect_to article_path(@article)
+    @school_class = school_class.new
+    @school_class.title = params[:title]
+    @school_class.description = params[:description]
+    @school_class.save
+    redirect_to school_class_path(@school_class)
   end
 
   # add edit and update methods here
   def edit
-    @article = Article.find(params[:id])
+    @school_class = school_class.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
-    @article.update(title: params[:article][:title], description: params[:article][:description])
-    redirect_to article_path(@article)
+    @school_class = school_class.find(params[:id])
+    @school_class.update(title: params[:school_class][:title], description: params[:school_class][:description])
+    redirect_to school_class_path(@school_class)
   end
 
 end
