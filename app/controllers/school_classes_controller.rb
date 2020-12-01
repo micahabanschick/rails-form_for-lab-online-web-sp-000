@@ -13,9 +13,7 @@ class SchoolClassesController < ActionController::Base
   end
 
   def create
-    @school_class = SchoolClass.new
-    @school_class.title = params[:title]
-    @school_class.description = params[:description]
+    @school_class = SchoolClass.new(school_class_params(:title, :room_number))
     @school_class.save
     redirect_to school_class_path(@school_class)
   end
@@ -27,7 +25,7 @@ class SchoolClassesController < ActionController::Base
 
   def update
     @school_class = SchoolClass.find(params[:id])
-    @post.update(school_class_params(:title))
+    @school_class.update(school_class_params(:title))
     redirect_to school_class_path(@school_class)
   end
 
