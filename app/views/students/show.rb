@@ -1,2 +1,2 @@
-<h1><%= @article.title %></h1>
-<p><%= @article.description %></p>
+<h1><%= @student.first_name %></h1>
+<p><%= @student.last_name %></p>
