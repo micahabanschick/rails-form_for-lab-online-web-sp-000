@@ -1,9 +1,7 @@
-<%= form_for @article do |f| %>
-  <%= f.label 'Article Title' %><br>
-  <%= f.text_field :title %><br>
-
-  <%= f.label 'Article Description' %><br>
-  <%= f.text_area :description %><br>
-
-  <%= f.submit "Submit Article" %>
+<%= form_for(@cat) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :color %>
+  <%= f.text_field :color %>
+  <%= f.submit %>
 <% end %>
