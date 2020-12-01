@@ -1,4 +1,4 @@
-<%= form_for(SchoolClass.new) do |f| %>
+<%= form_for(@school_class) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.label :room_number %>
