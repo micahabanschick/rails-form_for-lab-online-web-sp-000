@@ -30,5 +30,5 @@ class SchoolClassesController < ActionController::Base
     @article.update(title: params[:article][:title], description: params[:article][:description])
     redirect_to article_path(@article)
   end
-  
+
 end
